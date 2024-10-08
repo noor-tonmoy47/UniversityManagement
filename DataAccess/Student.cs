@@ -1,5 +1,5 @@
 ﻿using System;
-namespace UniManagement
+namespace DataAccess
 {
     internal class Student
     {
