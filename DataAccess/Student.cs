@@ -1,7 +1,7 @@
 ﻿using System;
 namespace DataAccess
 {
-    internal class Student
+    public class Student
     {
         public virtual int ID { get; set; }
         public virtual string FirstName { get; set; }
