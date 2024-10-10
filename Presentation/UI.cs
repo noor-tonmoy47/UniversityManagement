@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Logic;
 
 namespace Presentation
 {
-    internal class UI
+    public class UI
     {
 
 
@@ -49,10 +46,39 @@ namespace Presentation
 
             return choice;
         }
-        static void Main(string[] args)
+
+
+        public static void Driver()
         {
             int choice = Prompt();
 
+            if(choice == 1)
+            {
+                Console.WriteLine("Enter the following information...");
+
+                Console.Write("FirstName: ");
+                string FirstName = Console.ReadLine();
+                Console.WriteLine();
+
+                Console.Write("LastName: ");
+                string LastName = Console.ReadLine();
+                Console.WriteLine();
+
+                Console.Write("Age: ");
+                string age = Console.ReadLine();
+                Console.WriteLine();
+
+                Console.Write("Department: ");
+                string Department = Console.ReadLine();
+                Console.WriteLine();
+
+                Controller cnt = new Controller();
+                cnt.AddData(FirstName, LastName, age, Department);
+            }
+            else
+            {
+                Console.WriteLine("Feature Coming soon...");
+            }
         }
 
     }
