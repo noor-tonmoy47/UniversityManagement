@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Presentation\Presentation.csproj" />
+    <PackageReference Include="FluentNHibernate" Version="3.4.0" />
   </ItemGroup>
 
 </Project>

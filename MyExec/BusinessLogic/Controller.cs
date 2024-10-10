@@ -1,5 +1,6 @@
 ﻿using System;
 using DataAccess;
+using MyExec.DataAccess.Entity;
 using NHibernate;
 namespace Logic
 {
