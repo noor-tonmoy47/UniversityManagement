@@ -6,8 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="NHibernate" Version="5.5.2" />
-  </ItemGroup>
-
 </Project>
