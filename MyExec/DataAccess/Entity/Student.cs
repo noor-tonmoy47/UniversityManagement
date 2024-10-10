@@ -1,5 +1,4 @@
-﻿using System;
-namespace MyExec.DataAccess.Entity
+﻿namespace UniManagement.DataAccess.Entity
 {
     public class Student
     {

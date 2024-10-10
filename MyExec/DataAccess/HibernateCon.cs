@@ -5,8 +5,8 @@ using NHibernate;
 using NHibernate.Cfg;
 using NHibernate.Dialect;
 using NHibernate.Driver;
-using MyExec.DataAccess.Entity;
-namespace DataAccess
+using UniManagement.DataAccess.Entity;
+namespace UniManagement.DataAccess
 {
     public class HibernateCon
     {

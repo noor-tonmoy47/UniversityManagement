@@ -1,8 +1,7 @@
-﻿using FluentNHibernate;
-using FluentNHibernate.Mapping;
-using MyExec.DataAccess.Entity;
+﻿using FluentNHibernate.Mapping;
+using UniManagement.DataAccess.Entity;
 
-namespace MyExec.DataAccess.Mapping
+namespace UniManagement.DataAccess.Mapping
 {
     internal class StudentMap : ClassMap<Student>
     {

@@ -1,8 +1,6 @@
-﻿using System;
-using DataAccess;
-using MyExec.DataAccess.Entity;
-using NHibernate;
-namespace Logic
+﻿using UniManagement.DataAccess;
+using UniManagement.DataAccess.Entity;
+namespace UniManagement.BusinessLogic
 {
     public class Controller
     {

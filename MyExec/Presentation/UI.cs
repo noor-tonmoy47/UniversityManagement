@@ -1,5 +1,5 @@
 ﻿using System;
-using Logic;
+using UniManagement.BusinessLogic;
 
 namespace Presentation
 {
