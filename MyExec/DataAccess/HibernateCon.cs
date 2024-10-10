@@ -1,17 +1,14 @@
-﻿using System;
-using System.Reflection;
-using System.Data.SqlClient;
+﻿using FluentNHibernate.Cfg;
+using FluentNHibernate.Cfg.Db;
 using NHibernate;
-using NHibernate.Cfg;
-using NHibernate.Dialect;
-using NHibernate.Driver;
 using UniManagement.DataAccess.Entity;
+using UniManagement.DataAccess.Mapping;
 namespace UniManagement.DataAccess
 {
     public class HibernateCon
     {
 
-        private static readonly string conString = "Data Source=OATHKEEPER;Initial Catalog=University;Integrated Security=True;Encrypt=False;TrustServerCertificate=True";
+        private static readonly string ConString = "Data Source=OATHKEEPER;Initial Catalog=University;Integrated Security=True;Encrypt=False;TrustServerCertificate=True";
 
         private ISessionFactory sessionFactory;
 
@@ -23,18 +20,18 @@ namespace UniManagement.DataAccess
 
         private static ISessionFactory ConnectDB()
         {
-            var conf = new Configuration();
-
-            conf.DataBaseIntegration(x =>
-            {
-                x.ConnectionString = conString;
-                x.Driver<SqlClientDriver>();
-                x.Dialect<MsSql2008Dialect>();
-            });
-
-            //conf.AddAssembly(Assembly.GetExecutingAssembly());
-
-            return conf.BuildSessionFactory();
+           
+            return Fluently.Configure()
+                .Database
+                (MsSqlConfiguration.MsSql2012
+                    .Driver<NHibernate.Driver.SqlClientDriver>()
+                    .ConnectionString(ConString)
+                        .ShowSql()
+                )
+                
+                .Mappings(m => m.FluentMappings.AddFromAssemblyOf<StudentMap>())
+                
+                .BuildSessionFactory();
         }
 
         public void CreateData(Student student)
@@ -48,7 +45,7 @@ namespace UniManagement.DataAccess
                     //create student
                     session.Save(student);
 
-
+                    Console.WriteLine("Data Successfully Created");
                     tx.Commit();
                 }
 
