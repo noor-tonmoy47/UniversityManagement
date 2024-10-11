@@ -51,6 +51,29 @@ namespace UniManagement.DataAccess
 
             }
         }
-      
+
+
+        public void ShowStudentData() {
+
+
+            using (var session = this.sessionFactory.OpenSession())
+            {
+                using (var tx = session.BeginTransaction())
+                {
+                    Console.WriteLine("Database Connected");
+
+
+                    var students = session.CreateCriteria<Student>().List<Student>();
+
+                    Console.WriteLine("\n");
+                    foreach (var st in students)
+                    {
+                        Console.WriteLine($"{st.ID}. {st.FirstName} {st.LastName}");
+                    }
+
+                    tx.Commit();
+                }
+            }
+        }
     }
 }
