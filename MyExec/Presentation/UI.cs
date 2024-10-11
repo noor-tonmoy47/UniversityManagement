@@ -48,6 +48,30 @@ namespace Presentation
         }
 
 
+        private static int inputInteger(string valueToGet)
+        {
+            int integerValue = -1;
+            while (true) { 
+            
+                Console.Write($"{valueToGet}: ");
+                string integerString = Console.ReadLine();
+
+                try
+                {
+                    integerValue = Int32.Parse(integerString);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("invalid input");
+                    continue;
+                }
+
+                break;
+            }
+
+            return integerValue;
+        }
+
         public static void Driver()
         {
             int choice = Prompt();
@@ -64,9 +88,9 @@ namespace Presentation
                 string LastName = Console.ReadLine();
                 Console.WriteLine();
 
-                Console.Write("Age: ");
-                string age = Console.ReadLine();
-                Console.WriteLine();
+
+                int age = inputInteger("Age");
+
 
                 Console.Write("Department: ");
                 string Department = Console.ReadLine();

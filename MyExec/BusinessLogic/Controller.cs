@@ -12,29 +12,15 @@ namespace UniManagement.BusinessLogic
         {
             hCon = new HibernateCon();
         }
-        public void AddData(string FirstName, string LastName, string StringAge, string Department)
+
+        public void AddData(string FirstName, string LastName, int age, string Department)
         {
-            int ageInt;
-
-            while (true)
-            {
-
-                try
-                {
-                    ageInt = Int32.Parse(StringAge);
-                } catch (Exception e){
-                    Console.WriteLine("invalid input");
-                    continue;
-                }
-
-                break;
-            }
-
+            
             Student student = new Student
             {
                 FirstName = FirstName,
                 LastName = LastName,
-                Age = ageInt,
+                Age = age,
                 Department = Department
             };
             
