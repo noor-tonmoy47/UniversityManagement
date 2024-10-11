@@ -77,7 +77,10 @@ namespace Presentation
             }
             else
             {
-                Console.WriteLine("Feature Coming soon...");
+
+                Controller cnt = new Controller();
+                cnt.ShowStudentData();
+                //Console.WriteLine("Feature Coming soon...");
             }
         }
 

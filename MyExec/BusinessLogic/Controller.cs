@@ -44,7 +44,10 @@ namespace UniManagement.BusinessLogic
         //delete
 
         //show all
-
+        public void ShowStudentData()
+        {
+            this.hCon.ShowStudentData();
+        }
 
     }
 }
